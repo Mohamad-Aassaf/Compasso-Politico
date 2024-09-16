@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Compasso Politico</title>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="barra">
+            <div class="top-bar-content">
+                <h1 class="texto">Compasso Político - Crie um compasso para tudo!</h1>
+                <span class="small-text">Confira o canal do Novos Clássicos!</span>
+                <a href="https://www.youtube.com/@novosclassicos" target="_blank">
+                <img src="imagens/logoTK.png" alt="logoClassicos" class="logoClassicos">
+                </a>
+            </div>
+        </div>
+        <div contenteditable="true" class="label label-top">Conservador</div>
+        <div style="display: flex; align-items: center;">
+            <div contenteditable="true" class="label label-left">Intervencionista</div>
+            <div class="grid-container"></div>
+            <div contenteditable="true" class="label label-right">Liberal</div>
+        </div>
+        <div contenteditable="true" class="label label-bottom">Progresista</div>
+        <input type="file" id="file-input" accept="image/*" multiple>
+        <div id="delete-area">Arraste para cá para deletar</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
