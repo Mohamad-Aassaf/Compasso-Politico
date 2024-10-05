@@ -26,7 +26,7 @@ body {
     position: relative;
     border: 3px solid black;
     background-color: #333;
-    z-index: 1;
+    z-index: -1;
 }
 
 .grid-item {
@@ -50,6 +50,30 @@ body {
     z-index: 2; 
 }
 
+.fileButton {
+    display: inline-block;
+    width: 320px;
+    height: 50px;
+    background-color: rgb(131, 29, 28);
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.fileButton:hover {
+    background-color: #c04f4f;
+    transform: scale(1.05);
+}
+
+.fileButton:active {
+    transform: scale(0.95);
+}
+
 .label-top { 
     top: -3rem; 
 }
@@ -70,7 +94,7 @@ body {
     position: absolute;
     cursor: move;
     touch-action: none;
-    z-index: 5;
+    z-index: 100;
 }
 
 .image-wrapper img {
@@ -81,7 +105,7 @@ body {
 #delete-area {
     width: 200px;
     height: 50px;
-    background-color: #ff6666;
+    background-color: rgb(131, 29, 28);
     color: white;
     text-align: center;
     font-size: 15px;
@@ -95,6 +119,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.2s;
 }
+
 #delete-area:hover {
     background-color: #c04f4f;
 }
@@ -136,4 +161,39 @@ body {
     height: 80px;
     width: auto;
     margin-right: 30px;
+}
+
+.lateral-imagens {
+    position: fixed;
+    right: 0;
+    top: 100px; /* abaixo da barra */
+    width: 300px;
+    height: calc(100vh - 100px); /* ocupa a altura restante da tela */
+    background-color: #4b4b4b;
+    color: white;
+    padding: 10px;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.lateral-imagens h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.imagem-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.imagem-container .image-wrapper {
+    width: 100%;
+    cursor: pointer;
+}
+
+.imagem-container img {
+    width: 100%;
+    height: auto;
+    display: block;
 }

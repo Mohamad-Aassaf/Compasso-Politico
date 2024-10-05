@@ -36,8 +36,14 @@ document.getElementById('file-input').addEventListener('change', function(event)
             const img = document.createElement('img');
             img.src = e.target.result;
 
+            // Estilização inicial da imagem
+            img.style.width = '100%';
+            img.style.height = 'auto';
+            img.style.display = 'block';
+
             imageWrapper.appendChild(img);
-            document.querySelector('.grid-container').appendChild(imageWrapper);
+            // Adiciona a imagem à barra lateral
+            document.querySelector('.imagem-container').appendChild(imageWrapper); // Mudança aqui
 
             interact(imageWrapper).draggable({
                 onmove: dragMoveListener,
@@ -45,13 +51,15 @@ document.getElementById('file-input').addEventListener('change', function(event)
                     checkDeleteArea(event.target);
                 }
             }).resizable({
-                edges: { left: true, right: true, bottom: true, top: true }
+                edges: { left: true, right: true, bottom: true, top: true },
+                preserveAspectRatio: true  // Garante que a proporção da imagem será mantida
             }).on('resizemove', function(event) {
                 const { x, y } = event.target.dataset;
 
                 const newX = (parseFloat(x) || 0) + event.deltaRect.left;
                 const newY = (parseFloat(y) || 0) + event.deltaRect.top;
 
+                // Ajuste a largura e altura mantendo a proporção
                 event.target.style.width = `${event.rect.width}px`;
                 event.target.style.height = `${event.rect.height}px`;
 

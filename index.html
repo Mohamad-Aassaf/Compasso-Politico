@@ -18,6 +18,12 @@
                 </a>
             </div>
         </div>
+
+        <div class="lateral-imagens">
+            <h2>Imagens:</h2>
+            <div class="imagem-container"></div>
+        </div>
+        
         <div contenteditable="true" class="label label-top">Conservador</div>
         <div style="display: flex; align-items: center;">
             <div contenteditable="true" class="label label-left">Intervencionista</div>
@@ -25,7 +31,8 @@
             <div contenteditable="true" class="label label-right">Liberal</div>
         </div>
         <div contenteditable="true" class="label label-bottom">Progresista</div>
-        <input type="file" id="file-input" accept="image/*" multiple>
+        <input type="file" id="file-input" accept="image/*" multiple class="fileInput" style="display: none;">
+        <label for="file-input" class="fileButton">Adicionar Imagens</label>
         <div id="delete-area">Arraste para cá para deletar</div>
     </div>
 
